@@ -23,3 +23,7 @@ $ pip install gunicorn
 2. Click "Predict" button.
 
 ![Demo](/static/img/demo.jpg)
+
+
+### Live Demo:
+https://nlp-naivebayes.herokuapp.com/
