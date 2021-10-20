@@ -1,0 +1,40 @@
+.style-form-within{
+    margin-top: 30px;
+    max-width: 550px;
+    height: 650px;
+}
+
+.white-txt{color: white;}
+.black-txt{color: black;}
+.gray-txt{color: lightgray;}
+.orange-txt{color: orange;}
+.result {padding: 10px;}
+.title{margin-bottom: 30px;}
+
+.info-section{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    max-width: 550px;
+}
+
+h4,h2 {
+    display: flex;
+    flex-direction: row;
+}
+
+h4:before, h4:after{
+    content: "";
+    flex: 1 1;
+    border-bottom: 1px solid;
+    margin: auto;
+}
+
+h2,h4:before {margin-right: 10px}
+h2,h4:after {margin-left: 10px}
+
+h2:before, h2:after{
+    content: "";
+    flex: 1 1;
+    border-bottom: 1px solid;
+    margin: auto;
+}

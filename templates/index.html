@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block head %} 
+  	{{ super() }}
+{% endblock %}
+
+{% block content %}
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6" style="background-color:black">
+            <div class="style-form-within" >
+              <h2 class="title gray-txt">Demo</h2>
+              <form id="form" method="post" action="{{ url_for('Prediction') }}">
+                <div class="form-group">
+                  <h3 class="white-txt">Enter text to predict</h3>
+                  <input name="text_field" id="text_field" style="height: 100px;" type="text" class="form-control" placeholder="Enter text here">              
+                </div>
+                <button id="button-a" type="submit" class="btn btn-primary">Predict</button>
+              </form>
+
+              <br>
+              <br>
+
+              <div class="result white-txt">
+                <h4><span>Prediction</span></h4>
+                {% if result %}
+                  {% for variable, value in original_input.items() %}
+                    {{ variable }} : <br> <span style="font-size:20px"><i>{{ value }}</i></span>
+                  {% endfor %}
+                  <br><br>
+                  Predicted category : <span class="orange-txt" style="font-size:30px">  {{ result }}</span>
+                     
+                {% endif %}
+              </div>
+            
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="info-section">
+              <h2 class="title">Explanation</h2>
+              <p><a href="https://scikit-learn.org/0.19/datasets/twenty_newsgroups.html">Dataset</a>: <br>
+              20 newsgroups text dataset that contains roughly 18000 newsgroups posts on 20 topics in which split in two subsets: <br>
+                - training <br>
+                - testing <br>
+              The split between the train and test set is based upon a messages posted before and after a specific date.
+              <br>
+              <br>
+              In this model, only 5 categories were extracted and trained.<br>
+                - alt.atheism<br>
+                - soc.religion.christian<br>
+                - talk.politics.misc<br>
+                - comp.graphics <br>
+                - sci.med<br>
+              <br>
+
+              Method for training the model: <b>Naive Bayes classification</b> <br>
+              <br>
+
+              Examples of text to enter: <br>
+                - <i>Anti-aliasing was turned on using OpenGL</i> <br>
+                - <i>The earth was made in 7 days</i> <br>
+                - <i>Biden can become the President of U.S</i> <br>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+{% endblock %}
